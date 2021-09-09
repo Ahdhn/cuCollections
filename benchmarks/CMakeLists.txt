@@ -98,3 +98,9 @@ ConfigureBench(HASH_FUNCTION_BENCH
 # - distinct_count_estimator benchmarks -----------------------------------------------------------
 ConfigureBench(DISTINCT_COUNT_ESTIMATOR_BENCH
   distinct_count_estimator/distinct_count_estimator_bench.cu)
+set(RBK_BENCH_SRC "${CMAKE_CURRENT_SOURCE_DIR}/reduce_by_key/reduce_by_key.cu")
+ConfigureBench(RBK_BENCH "${RBK_BENCH_SRC}")
+
+#TODO: Port priority_queue benchmark to google benchmark
+add_executable(PRIORITY_QUEUE_BENCH "${CMAKE_CURRENT_SOURCE_DIR}/priority_queue/priority_queue_bench.cu")
+target_link_libraries(PRIORITY_QUEUE_BENCH cuco)
