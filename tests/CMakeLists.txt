@@ -136,7 +136,6 @@ ConfigureTest(DISTINCT_COUNT_ESTIMATOR_TEST
     distinct_count_estimator/device_ref_test.cu)
 ConfigureTest(DYNAMIC_MAP_TEST "${DYNAMIC_MAP_TEST_SRC}")
 ####################################################################################################
-# TODO: Port priority_queue tests to Catch2
-add_executable(PRIORITY_QUEUE_TEST
-               "${CMAKE_CURRENT_SOURCE_DIR}/priority_queue/priority_queue_test.cu")
-target_link_libraries(PRIORITY_QUEUE_TEST cuco)
+set(PRIORITY_QUEUE_TEST_SRC
+    "${CMAKE_CURRENT_SOURCE_DIR}/priority_queue/priority_queue_test.cu")
+ConfigureTest(PRIORITY_QUEUE_TEST "${PRIORITY_QUEUE_TEST_SRC}")
