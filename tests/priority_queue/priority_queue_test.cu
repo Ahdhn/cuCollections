@@ -19,13 +19,14 @@
 #include <thrust/device_vector.h>
 #include <thrust/host_vector.h>
 
-#include <catch2/catch.hpp>
+#include <catch2/catch_test_macros.hpp>
 
 #include <cooperative_groups.h>
 #include <cuda_runtime.h>
 
 #include <map>
 #include <vector>
+#include <random>
 
 using namespace cuco;
 namespace cg = cooperative_groups;
@@ -154,7 +155,7 @@ static std::vector<T> pop_from_queue(priority_queue<T, Compare>& pq, size_t n)
 
   std::vector<T> result(h_popped.size());
 
-  thrust::copy(thrust::host, h_popped.begin(), h_popped.end(), result.begin());
+  thrust::copy(h_popped.begin(), h_popped.end(), result.begin());
 
   return result;
 }

@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-#include <cuco/detail/pair.cuh>
+#include <cuco/pair.cuh>
 #include <cuco/priority_queue.cuh>
 
 #include <thrust/device_vector.h>
 
-#include <benchmark/benchmark.h>
+//#include <benchmark/benchmark.h>
 
 #include <cstdint>
 #include <random>

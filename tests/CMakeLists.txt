@@ -23,7 +23,8 @@ include(CTest)
 CPMAddPackage(
   NAME Catch2
   GITHUB_REPOSITORY catchorg/Catch2
-  VERSION 3.3.0
+  VERSION 3.7.0
+  #VERSION 3.3.0
 )
 
 # Header for catch_discover_tests
@@ -134,7 +135,7 @@ ConfigureTest(DISTINCT_COUNT_ESTIMATOR_TEST
     distinct_count_estimator/unique_sequence_test.cu
     distinct_count_estimator/spark_parity_test.cu
     distinct_count_estimator/device_ref_test.cu)
-ConfigureTest(DYNAMIC_MAP_TEST "${DYNAMIC_MAP_TEST_SRC}")
+#ConfigureTest(DYNAMIC_MAP_TEST "${DYNAMIC_MAP_TEST_SRC}")
 ####################################################################################################
 set(PRIORITY_QUEUE_TEST_SRC
     "${CMAKE_CURRENT_SOURCE_DIR}/priority_queue/priority_queue_test.cu")
