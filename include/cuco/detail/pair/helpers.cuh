@@ -83,7 +83,7 @@ using packed_t = typename packed<sizeof(Pair)>::type;
 template <typename Pair>
 __host__ __device__ constexpr bool is_packable()
 {
-  return not std::is_void<packed_t<Pair>>::value and std::has_unique_object_representations_v<Pair>;
+  return !std::is_void<packed_t<Pair>>::value && std::has_unique_object_representations_v<Pair>;
 }
 
 /**

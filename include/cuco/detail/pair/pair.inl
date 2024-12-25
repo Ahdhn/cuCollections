@@ -45,7 +45,7 @@ template <class T1, class T2, class U1, class U2>
 __host__ __device__ constexpr bool operator==(cuco::pair<T1, T2> const& lhs,
                                               cuco::pair<U1, U2> const& rhs) noexcept
 {
-  return lhs.first == rhs.first and lhs.second == rhs.second;
+  return lhs.first == rhs.first && lhs.second == rhs.second;
 }
 
 }  // namespace cuco
