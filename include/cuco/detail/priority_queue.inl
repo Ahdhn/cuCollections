@@ -57,6 +57,14 @@ priority_queue<T, Compare, Allocator>::priority_queue(std::size_t initial_capaci
 }
 
 template <typename T, typename Compare, typename Allocator>
+void clear(cudaStream_t stream)
+{
+  CUCO_CUDA_TRY(cudaMemsetAsync(d_size_, 0, sizeof(int), stream));
+  CUCO_CUDA_TRY(cudaMemsetAsync(d_p_buffer_size_, 0, sizeof(std::size_t), stream));
+  CUCO_CUDA_TRY(cudaMemsetAsync(d_locks_, 0, sizeof(int) * (node_capacity_ + 1), stream));
+}
+
+template <typename T, typename Compare, typename Allocator>
 priority_queue<T, Compare, Allocator>::~priority_queue()
 {
   std::allocator_traits<int_allocator_type>::deallocate(int_allocator_, d_size_, 1);

@@ -84,6 +84,12 @@ class priority_queue {
                  cudaStream_t stream    = 0);
 
   /**
+   * @brief Reset internal memory
+   * @param stream Stream used for constructing the priority queue
+   */
+  void clear(cudaStream_t stream = 0);
+
+  /**
    * @brief Push elements into the priority queue
    *
    * @tparam InputIt Device accessible input iterator whose `value_type`
